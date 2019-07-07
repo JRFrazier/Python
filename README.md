@@ -1,36 +1,88 @@
 # Python
-All of my notes and projects from my Python learning journey
 
+All of my notes and projects from my Python learning journey
 
 # Notes
 
 ## Commenting
+
 Add a "#" in front of the line to write a commend or comment out your code
 
 example:
+
 ```python
 # This is a comment
 ```
+
 ---
+
 ## Printing
+
 Use the "print()" command to print to the terminal.
 
 example:
+
 ```python
 print("Hello World!")
 ```
+
 ---
+
 ## Variables
-Assighen a variable by stating the name of the variable then an equals "=" symbol and the value.
+
+Assign a variable by stating the name of the variable then an equals "=" symbol and the value.
 
 example:
+
 ```python
 foo = "bar"
 ```
+
+### Destructuring
+
+- Allows you to assign variable names to multiple values in one line
+
+example:
+
+````python
+def multi_output():
+    x = 1
+    y = 2
+    z = 3
+    return x, y, z
+
+a, b, c = multi_output() # a = 1, b = 2, c = 3
 ---
+
 ## Functions
 
+- All Python functions start with the keyword "def"
+- Function bodies are indented under the function declaration
+- Function names are lowercase.
+- If a function name has two or more words the words are separated with and underscore "\_"
+
+example:
+
+```python
+def example_func():
+    print("Hello World!")
+# this is the end of the function
+````
+
+- the "return" keyword is used to return values in a function
+- You can return multiple values in a function by separating both return values with a comma.
+
+  example:
+
+```python
+def example():
+    val1 = 1
+    val2 = 2
+    return val1, val2
+```
+
 ---
+
 ## Errors
 
 **SyntaxError** - Something is wrong with the way the code was written
@@ -46,4 +98,5 @@ quote = """ this is
 a multiline
 quote"""
 ```
+
 ---
