@@ -101,3 +101,45 @@ quote"""
 ```
 
 ---
+
+## Boolean
+
+True = True
+False = False
+
+Equals ==
+Not Equals !=
+
+and
+or
+not
+
+---
+
+## Conditional Operater
+
+if, elif, and else
+
+```python
+animal = "cat"
+
+def is_cat(animal):
+    if animal == "cat":
+        return True
+    elif animal == "dog":
+        return False
+    else:
+        return "please enter cat or dog"
+```
+
+tye and except
+
+```python
+def raises_value_error():
+  raise ValueError
+
+try:
+  raises_value_error()
+except ValueError:
+  print("You raised a ValueError!")
+```
