@@ -44,7 +44,7 @@ foo = "bar"
 
 example:
 
-````python
+```python
 def multi_output():
     x = 1
     y = 2
@@ -52,6 +52,7 @@ def multi_output():
     return x, y, z
 
 a, b, c = multi_output() # a = 1, b = 2, c = 3
+```
 ---
 
 ## Functions
