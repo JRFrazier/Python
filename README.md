@@ -171,3 +171,48 @@ name_age_height = zip(name, age, height)
 # to print the list you must use list()
 print(list(name_age_height)) # will output [('ray', 16, 56), ('sam', 17, 67), ('lue', 18, 50)]
 ```
+
+### Append
+
+- Use _.append()_ to add to a list
+
+example:
+
+```python
+numbers = [1, 2, 3, 4]
+
+numbers.append(5)
+
+print(numbers) # [1, 2, 3, 4, 5]
+```
+
+### Combining Lists
+
+- Use the _+_ to combine 2 lists together
+
+example:
+
+```python
+numbers = [1, 2]
+new_numbers = numbers + [3, 4]
+```
+
+### Range
+
+- To access a range from a list you can use the _range()_ function combined with a for loop.
+
+example:
+
+```python
+range1 = range(10)
+
+print(list(range1)) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+range2 = range(2, 10)
+
+print(list(range2))) # [2, 3, 4, 5, 6, 7, 8, 9]
+
+range3 = range(2, 9, 2)
+
+print(list(range3))) # [2, 4, 6, 8]
+```
