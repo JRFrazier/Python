@@ -53,6 +53,7 @@ def multi_output():
 
 a, b, c = multi_output() # a = 1, b = 2, c = 3
 ```
+
 ---
 
 ## Functions
@@ -68,7 +69,7 @@ example:
 def example_func():
     print("Hello World!")
 # this is the end of the function
-````
+```
 
 - the "return" keyword is used to return values in a function
 - You can return multiple values in a function by separating both return values with a comma.
@@ -132,7 +133,7 @@ def is_cat(animal):
         return "please enter cat or dog"
 ```
 
-tye and except
+try and except
 
 ```python
 def raises_value_error():
@@ -142,4 +143,31 @@ try:
   raises_value_error()
 except ValueError:
   print("You raised a ValueError!")
+```
+
+## Lists
+
+- Ordered set of objects (think "array" in JS)
+
+example:
+
+```python
+numbers = [1, 2, 3, 4]
+```
+
+### Zip
+
+- will combine items in 2 or more lists
+
+example:
+
+```python
+name = ['ray', 'sam', 'lue']
+age = [16, 17, 18]
+height = [56, 67, 50]
+
+name_age_height = zip(name, age, height)
+
+# to print the list you must use list()
+print(list(name_age_height)) # will output [('ray', 16, 56), ('sam', 17, 67), ('lue', 18, 50)]
 ```
