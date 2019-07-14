@@ -166,10 +166,9 @@ name = ['ray', 'sam', 'lue']
 age = [16, 17, 18]
 height = [56, 67, 50]
 
-name_age_height = zip(name, age, height)
+name_age_height = list(zip(name, age, height)) # the list function converts the zip from a pointer to a list
 
-# to print the list you must use list()
-print(list(name_age_height)) # will output [('ray', 16, 56), ('sam', 17, 67), ('lue', 18, 50)]
+print(name_age_height) # will output [('ray', 16, 56), ('sam', 17, 67), ('lue', 18, 50)]
 ```
 
 ### Append
