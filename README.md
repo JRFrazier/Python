@@ -2,7 +2,7 @@
 
 All of my notes and projects from my Python learning journey
 
-# Notes
+# Notes:
 
 ## Commenting
 
@@ -145,6 +145,8 @@ except ValueError:
   print("You raised a ValueError!")
 ```
 
+---
+
 ## Lists
 
 - Ordered set of objects (think "array" in JS)
@@ -215,3 +217,222 @@ range3 = range(2, 9, 2)
 
 print(list(range3))) # [2, 4, 6, 8]
 ```
+
+### Length
+
+- Use the "len()" function to get the length of an object
+
+example:
+
+```python
+my_list = [1, 2, 3, 4]
+
+print(len(my_list)) # 4
+```
+
+### Last Element
+
+- To ge the last element of a list use -1 in the square brackets
+
+example:
+
+```python
+my_list = [1, 2, 3, 4]
+
+print(my_list[-1]) # 4
+```
+
+### Slicing lists
+
+- To select a specific range from a list you can use the slice option (object[start:end])
+
+example:
+
+```python
+letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+
+print(letters[1:5]) # ['b', 'c', 'd', 'e']
+
+# print from the beginning of the list to d
+print(letters[:4])
+
+# print from c to the end of the list
+print(letters[2:])
+
+# print last 2 elements of letters
+print(letters[-2:])
+```
+
+### Counting elements
+
+- To count how many times a specified element appears in a list you can use the ".count()" function.
+
+example:
+
+```python
+letters = ['m', 'i', 's', 's', 'i', 's', 's', 'i', 'p', 'p', 'i']
+
+# Count how many times the letter 'i' shows up in the list 'letters'
+print(letters.count('i')) # 4
+```
+
+### Sorting Lists
+
+- To sort a list use the '.sort()' function.
+
+_Note: this function will permanently sort the list. If you want to make a separate sorted list without affecting
+the original list see 'sorted'._
+
+example:
+
+```python
+names = ['Xander', 'Buffy', 'Angel', 'Willow', 'Giles']
+
+print(names.sort()) # ['Angel', 'Buffy', 'Giles', 'Willow', 'Xander']
+
+# Sort in reverse
+
+print(names.sort(reverse=True))) # ['Xander', 'Willow', 'Giles', 'Buffy', 'Angel']
+```
+
+- to create a separate sorted list use the 'sorted(list)' function
+
+example:
+
+```python
+games = ['Portal', 'Minecraft', 'Pacman', 'Tetris', 'The Sims', 'Pokemon']
+
+sorted_games = sorted(games)
+
+print(sorted_games) # ['Minecraft', 'Pacman', 'Pokemon', 'Portal', 'Tetris', 'The Sims']
+
+print(games) # ['Portal', 'Minecraft', 'Pacman', 'Tetris', 'The Sims', 'Pokemon']
+```
+
+---
+
+## Tuples
+
+- Allows you to store multiple pieces of data inside of it
+- Tuples are immutable
+
+example:
+
+```python
+my_info = ('Justin', 38, 'Programmer') # This is a tuple
+
+print(my_info) # ('Justin', 38, 'Programmer')
+```
+
+### Accessing elements of a Tuple
+
+- Same as a list
+
+  example:
+
+```python
+my_info = ('Justin', 38, 'Programmer')
+
+print(my_info[0]) # Justin
+print(my_info[1]) # 38
+```
+
+### Tuples are Immutable
+
+example:
+
+```python
+my_info = ('Justin', 38, 'Programmer')
+
+my_info[0] = "JR" # This would invoke an error
+```
+
+### Assigning elements of Tuple to variables (AKA: Unpacking a Tuple)
+
+example:
+
+```python
+my_info = ('Justin', 38, 'Programmer')
+
+name, age, occupation = my_info
+
+print(name) # Justin
+print(age) # 38
+print(occupation) # Programmer
+```
+
+### Creating a one element Tuple
+
+example:
+
+```python
+one_el_tuple = (4,) # The trailing comma is required to store this as a tuple
+```
+
+---
+
+## Loops
+
+- Loops are a way of repeating a set of code many times.
+- There are 3 types of loops (for, while, and list comprehension)
+
+### For Loops
+
+- iterates over a list
+
+example:
+
+```python
+dog_breeds = ['french bulldog', 'dalmation', 'shihtzu', 'poodle', 'collie']
+
+# time for the loop
+for breed in dog_breeds:
+  print(breed)
+
+# output will be a list of each breed in the list dog_breeds
+```
+
+- you can also run a loop for a number of times using "range()"
+
+example:
+
+```python
+# Print Hello 3 times
+
+for i in range(3):
+  print("Hello")
+```
+
+#### Breaking the loop
+
+- you can stop a loop from within using _break_
+
+example:
+
+```python
+list_of_names = ['Justin', 'Shere', 'Harper', 'Delonte', 'Kaleb', 'Lorena']
+
+for name in list_of_names:
+  if name == "Harper"
+    print("That is my daughter")
+    break # this will stop the loop when it gets to the name "Harper"
+
+print("End of search!")
+```
+
+#### Skipping items in a loop
+
+- you can skip items by using _continue_
+
+example:
+
+```python
+big_number_list = [1, 2, 30, 4, 5, 60, 7, 80, 9, 10]
+
+for i in big_number_list:
+  if i < 10:
+    continue
+  print(i) # will print only 30 60 80 and 10
+```
+
+### While loops
