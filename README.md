@@ -263,6 +263,17 @@ print(letters[2:])
 print(letters[-2:])
 ```
 
+### List Functions
+
+```python
+foo = [1, 2, 3]
+
+foo.append(4) # adds 4 to the end of foo
+
+foo.pop() # removes 4 from the end of foo
+
+```
+
 ### Counting elements
 
 - To count how many times a specified element appears in a list you can use the ".count()" function.
@@ -436,3 +447,36 @@ for i in big_number_list:
 ```
 
 ### While loops
+
+- Perform a set of code until some condition is reached.
+- Can be used to iterate through lists
+
+example:
+
+```python
+foo = ['a', 'b', 'c', 'd', 'e', 'f']
+
+index = 0
+
+while index < len(foo):
+  print(foo[index])
+  index += 1
+```
+
+### _List Comprehension_
+
+- Short hand for running a conditional in a for loop against a list
+
+example:
+
+```python
+foo = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+bar = [num for num in foo if (num % 2) != 0]
+
+print(bar) # [1, 3, 5, 7, 9]
+
+add_one_to_foo = [num + 1 for num in foo] # increases each number in foo by one
+
+print(add_one_to_foo) # [2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
