@@ -320,6 +320,19 @@ print(sorted_games) # ['Minecraft', 'Pacman', 'Pokemon', 'Portal', 'Tetris', 'Th
 print(games) # ['Portal', 'Minecraft', 'Pacman', 'Tetris', 'The Sims', 'Pokemon']
 ```
 
+### Checking if Item Exists
+
+- To determine if a specified item is present in a list use the "in" keyword:
+
+example:
+
+```python
+the_list = ["apple", "banana", "cherry"]
+
+if "apple" in the_list:
+  print("Yes, 'apple' is in the list")
+```
+
 ---
 
 ## Tuples
@@ -479,4 +492,64 @@ print(bar) # [1, 3, 5, 7, 9]
 add_one_to_foo = [num + 1 for num in foo] # increases each number in foo by one
 
 print(add_one_to_foo) # [2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
+---
+
+## Strings
+
+- Strings are similar to lists in that each character in a string has an index starting with zero 0.
+
+- Strings in Python are _immutable_
+
+example:
+
+```python
+my_name = "Justin"
+
+first_initial = my_name[0]
+
+print(first_initial) # J
+```
+
+### Slicing a String
+
+- You can slice a string using the following syntax:
+
+```python
+my_name = "Justin"
+
+print(my_name[0:2]) # Ju
+
+print(my_name[1:4]) # ust
+
+```
+
+### Concatenating Strings
+
+```python
+first_name = "Justin"
+last_name = "Frazier"
+
+full_name = first_name + " " + last_name
+
+print(full_name) # Justin Frazier
+```
+
+### Find The Length of a String
+
+```python
+my_name = "Justin"
+
+print(len(my_name)) # 6
+```
+
+### Check For Words or Letters in String
+
+```python
+test_string = "This is a test string"
+
+"test" in test_string # True
+
+"Test" in test_string # False - as you can see this is type sensitive
 ```
