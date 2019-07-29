@@ -553,3 +553,101 @@ test_string = "This is a test string"
 
 "Test" in test_string # False - as you can see this is type sensitive
 ```
+
+### String Methods
+
+- String methods will create new strings and never mutate the original string.
+
+String Formatting:
+
+```python
+some_string = "Hello World"
+
+some_string.lower() # returns the string in all lowercase
+some_string.upper() # returns the string in all uppercase
+some_string.title() # returns the string with the first letter of each word in uppercase
+```
+
+### Splitting Strings
+
+- To split a string use the \n (new line) or \t (vertical tab) to split strings.
+
+example:
+
+```python
+smooth_chorus = \
+"""And if you said, "This life ain't good enough."
+I would give my world to lift you up
+I could change my life to better suit your mood
+Because you're so smooth"""
+
+chorus_lines = smooth_chorus.split('\n')
+
+print (chorus_lines) # ['And if you said, "This life ain\'t good enough."', 'I would give my world to lift you up', 'I could change my life to better suit your mood', "Because you're so smooth"]
+```
+
+### Joining a String
+
+- use ".join()" to join a string
+
+example:
+
+```python
+usage: 'delimiter'.join(list_you_want_to_join)
+
+ingredients = ['steak', 'butter', 'salt', 'pepper', 'garlic', 'sage', 'oliv oil']
+
+print(', '.join(ingredients)) # 'steak, butter, salt, pepper, garlic, sage, olive oil'
+```
+
+### .strip() Method
+
+- This method will, by default, strip white spaces from the beginning and end of a string unless an argument is provided. If an argument is provided this method will ONLY strip the character provided in the argument from both ends of the string.
+
+example:
+
+```python
+
+my_name = "    Justin Frazier    "
+
+print(my_name.strip()) # "Justin Frazier"
+```
+
+### .replace() Method
+
+- This method allows you to replace any space or character in a string with something else.
+
+example:
+
+```python
+
+with_spaces = "You got the kind of loving that can be so smooth"
+
+print(with_spaces.replace(' ', '_')) # 'You_got_the_kind_of_loving_that_can_be_so_smooth'
+```
+
+### .find() Method
+
+- use to find index of specified string in a string.
+
+example:
+
+```python
+
+greatest = "You are the greatest!"
+
+print(greatest.find('greatest')) # 12
+```
+
+### .format() Method
+
+- enables you to include variables within a string.
+
+example:
+
+```python
+def favorite_song_statement(song, artist):
+  return "My favorite song is {song} by {artist}.".format(song=song, artist=artist)
+
+print(favorite_song_statement("Satellite", "Dave Matthews"))
+```
