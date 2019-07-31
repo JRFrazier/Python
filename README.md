@@ -626,6 +626,18 @@ with_spaces = "You got the kind of loving that can be so smooth"
 print(with_spaces.replace(' ', '_')) # 'You_got_the_kind_of_loving_that_can_be_so_smooth'
 ```
 
+### Replace with case insensitive
+
+example:
+
+```python
+import re
+
+str_replace = re.compile("this", re.IGNORECASE)
+
+print(str_replace.sub("that", "You can get with that, or you can get with that")) # You can get with this, or you can get with that
+```
+
 ### .find() Method
 
 - use to find index of specified string in a string.
@@ -650,4 +662,41 @@ def favorite_song_statement(song, artist):
   return "My favorite song is {song} by {artist}.".format(song=song, artist=artist)
 
 print(favorite_song_statement("Satellite", "Dave Matthews"))
+```
+
+### Convert String to Float
+
+- Use the float() method to convert a string into a float
+
+example:
+
+```python
+foo = "100"
+print(float(foo)) # 100.0
+```
+
+---
+
+## Modules
+
+- To import a module use the following syntax:
+
+```python
+from module import object # use this syntax if you are exporting a specific object from a module
+
+import module # use this syntax if you would like to import the entire module
+```
+
+- To see all _objects_ that are available in an module use the following syntax:
+
+```python
+from datetime import datetime
+
+print(dir(datetime)) # ['__add__', '__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__ne__', '__new__', '__radd__', '__reduce__', '__reduce_ex__', '__repr__', '__rsub__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', 'astimezone', 'combine', 'ctime', 'date', 'day', 'dst', 'fold', 'fromordinal', 'fromtimestamp', 'hour', 'isocalendar', 'isoformat', 'isoweekday', 'max', 'microsecond', 'min', 'minute', 'month', 'now', 'replace', 'resolution', 'second', 'strftime', 'strptime', 'time', 'timestamp', 'timetuple', 'timetz', 'today', 'toordinal', 'tzinfo', 'tzname', 'utcfromtimestamp', 'utcnow', 'utcoffset', 'utctimetuple', 'weekday', 'year']
+```
+
+### Aliasing A Module Name
+
+```python
+import module as new_name
 ```
