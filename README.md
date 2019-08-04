@@ -700,3 +700,28 @@ print(dir(datetime)) # ['__add__', '__class__', '__delattr__', '__dir__', '__doc
 ```python
 import module as new_name
 ```
+
+## Virtual Environments w/ pipenv
+
+Read about it here:
+https://docs.pipenv.org/en/latest/#
+
+## Dictionary
+
+- is an unordered set of key: value pares. (Like an object in JS)
+
+example:
+
+```python
+foo = {"name": "Justin", "job": "Developer"}
+```
+
+### Adding A "Key: Value" Pair
+
+example:
+
+```python
+foo = {}
+
+foo["name"] = "Justin"
+```
