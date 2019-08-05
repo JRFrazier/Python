@@ -701,10 +701,14 @@ print(dir(datetime)) # ['__add__', '__class__', '__delattr__', '__dir__', '__doc
 import module as new_name
 ```
 
+---
+
 ## Virtual Environments w/ pipenv
 
 Read about it here:
 https://docs.pipenv.org/en/latest/#
+
+---
 
 ## Dictionary
 
@@ -724,4 +728,54 @@ example:
 foo = {}
 
 foo["name"] = "Justin"
+```
+
+### Adding Multiple Keys
+
+- Use .update() to add multiple "Key: Value" pairs to a Dictionary.
+
+example:
+
+```python
+sensors =  {"living room": 21, "kitchen": 23, "bedroom": 20}
+
+sensors =  {"living room": 21, "kitchen": 23, "bedroom": 20}
+
+print(sensors) # {"living room": 21, "kitchen": 23, "bedroom": 20, "pantry": 22, "guest room": 25, "patio": 34}
+```
+
+### List Comprehensions to Dictionaries
+
+- You can create a dictionary from 2 lists using list comprehensions to dictionaries
+
+example:
+
+```python
+drinks = ["espresso", "chai", "decaf", "drip"]
+caffeine = [64, 40, 0, 120]
+
+zipped_drinks = zip(drinks, caffeine)
+
+drinks_to_caffeine = {key:value for key, value in zipped_drinks}
+
+print(drinks_to_caffeine) # {'espresso': 64, 'chai': 40, 'decaf': 0, 'drip': 120}
+```
+
+### Try/Except to Get Key
+
+- Check to see if a key is available in a dictionary and if not return a custom value.
+
+example:
+
+```python
+caffeine_level = {"espresso": 64, "chai": 40, "decaf": 0, "drip": 120}
+
+def check_caffeine_level(source):
+  try:
+    print(caffeine_level[source])
+  except KeyError:
+    print('Unknown Caffeine Level')
+
+check_caffeine_level('matcha') #  'Unknown Caffeine Level'
+
 ```
