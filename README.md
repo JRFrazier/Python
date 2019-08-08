@@ -779,3 +779,113 @@ def check_caffeine_level(source):
 check_caffeine_level('matcha') #  'Unknown Caffeine Level'
 
 ```
+
+### Get a Key from Value
+
+- Use the .get() method to search for a value instead of the my_dict[key] notation we have been using.
+
+example:
+
+```python
+building_heights = {"Burj Khalifa": 828, "Shanghai Tower": 632, "Abraj Al Bait": 601, "Ping An": 599, "Lotte World Tower": 554.5, "One World Trade": 541.3}
+
+#this line will return 632:
+building_heights.get("Shanghai Tower")
+
+#this line will return None:
+building_heights.get("My House")
+```
+
+- you can also specify a value to return if the key doesn't exist.
+
+example:
+
+```python
+ building_heights.get('Kilimanjaro', 'No Value') # will return "No Value"
+```
+
+### Remove a Key
+
+- Use .pop() to remove a key from a dictionary
+
+example:
+
+```python
+raffle = {223842: "Teddy Bear", 872921: "Concert Tickets", 320291: "Gift Basket", 412123: "Necklace", 298787: "Pasta Maker"}
+
+raffle.pop(320291, 'No Prize') # will remove key 320291 from the "raffle" dictionary or it will return "No Prize" is the key doesn't exist
+
+```
+
+### Get All Keys
+
+example:
+
+```python
+test_scores = {"Grace":[80, 72, 90], "Jeffrey":[88, 68, 81], "Sylvia":[80, 82, 84], "Pedro":[98, 96, 95], "Martin":[78, 80, 78], "Dina":[64, 60, 75]}
+
+print(list(test_scores)) # This will print ["Grace", "Jeffrey", "Sylvia", "Pedro", "Martin", "Dina"]
+```
+
+- There is another method of doing this using .keys(), however this will return _dict_keys_ which is an imutable object of the key values.
+
+example
+
+```python
+test_scores = {"Grace":[80, 72, 90], "Jeffrey":[88, 68, 81], "Sylvia":[80, 82, 84], "Pedro":[98, 96, 95], "Martin":[78, 80, 78], "Dina":[64, 60, 75]}
+
+print(test_scores.keys()) # will print dict_keys(['Grace', 'Jeffrey', 'Sylvia', 'Pedro', 'Martin', 'Dina'])
+```
+
+### Get All Values
+
+- Use the .values() method to return all values in a dictionary
+
+```python
+
+num_exercises = {"functions": 10, "syntax": 13, "control flow": 15, "loops": 22, "lists": 19, "classes": 18, "dictionaries": 18}
+
+print(num_exercises.values()) # Will print dict_values([10, 13, 15, 22, 19, 18, 18])
+
+```
+
+### Get All Items In A Dictionary
+
+- Use the .items() method.
+- Each item returned by .items() will be a tuple _(key, value)_
+
+```python
+pct_women_in_occupation = {"CEO": 28, "Engineering Manager": 9, "Pharmacist": 58, "Physician": 40, "Lawyer": 37, "Aerospace Engineer": 9}
+
+print(pct_women_in_occupation.items()) # This will return dict_items([('CEO', 28), ('Engineering Manager', 9), ('Pharmacist', 58), ('Physician', 40), ('Lawyer', 37), ('Aerospace Engineer', 9)])
+```
+
+### Classes
+
+- A _Class_ is a template for a data type, that describes the kinds of information that class will hold and how a programmer will interact with that data.
+
+- Define a _Class_ in Python using the Keyword "class" followed by the name of the class
+
+- Class names should be Capitalized in accordance to the [PEP 8 Style Guide](https://www.python.org/dev/peps/pep-0008/#class-names)
+
+example class:
+
+```python
+class Foo:
+  pass
+```
+
+> Note: The _pass_ keyword acts as a place holder for code that's not yet present where something is required to prevent an _IndentationError_
+
+- To use as class you first have to _Instantiate_ it.
+
+- You can instantiate a class by assigning it to a variable:
+
+example class instantiation:
+
+```python
+class Foo:
+  pass
+
+bar = Foo()
+```
