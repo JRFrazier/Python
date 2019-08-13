@@ -889,3 +889,98 @@ class Foo:
 
 bar = Foo()
 ```
+
+### Class Variables
+
+- A _class variable_ is a variable that's that same for every instance of the class.
+- When we want the same data to be available to every instance of a class we use a class variable.
+
+```python
+class Musician:
+  title = "Rockstar" # This is a class variable
+
+drummer = Musician() # Instantiating the class
+
+print(drummer.title) # Prints our "Rockstar"
+```
+
+### Methods
+
+- _Methods_ are functions that are defined as part of a class.
+- The first argument in a "Method" is always the object that is calling the method.
+- Convention recommends that we name this first argument (self).
+
+```python
+class Dog:
+  dog_time_dilation = 7
+
+  def time_explanation(self):
+    print("Dogs experience {} years for every 1 human year.".format(self.dog_time_dilation))
+
+  pipi_pitbull = Dog()
+  pipi_pitbull.time_explanation() # Prints "Dogs experience 6 years for every 1 human year."
+```
+
+- Methods can take on additional arguments aside from self.
+
+### Dunder Methods (AKA: Magic Methods)
+
+- These methods are called dunder methods because they are surrounded by double underscores `__init__`
+- These methods have special behavior and behave differently form regular methods.
+
+`__init__`
+
+- used to initialize a newly created object.
+- called every time the class is instantiated.
+- Methods that are used to prepare an object being instantiated are called constructors.
+
+example:
+
+```python
+class Hello:
+  def __init__(self):
+    print("Hello")
+
+say_hello = Hello() # This will print "Hello" every time the class is instantiated
+
+```
+
+### Instance Variable
+
+- Instance variables are variables that are specific to the object (instance of a class) they are attached to.
+
+example:
+
+```python
+class Foo:
+  pass
+
+hey_foo = Foo()
+hi_foo = Foo()
+
+hey_foo.greet = "Hey"
+hi_foo.greet = "Hi"
+
+print(hey_foo.greet) # will print "Hey"
+print(hi_foo.greet) # will print "Hi"
+```
+
+### Verifying if object has attribute
+
+- We can use either _getattr()_ function or the _hasattr()_ function.
+- The _getattr()_ function will return the attribute if it exists.
+- The _hasattr()_ function will return the _True_ or _False_ if the attribute does/doesn't exist.
+
+```python
+
+class NoAttr:
+  pass
+
+attributeless = NoAttr()
+
+hasattr(attributeless, "fake_attribute")
+# returns False
+
+getattr(attributeless, "other_fake_attribute", 800)
+# returns 800, the default value
+```
