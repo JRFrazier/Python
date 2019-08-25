@@ -917,8 +917,8 @@ class Dog:
   def time_explanation(self):
     print("Dogs experience {} years for every 1 human year.".format(self.dog_time_dilation))
 
-  pipi_pitbull = Dog()
-  pipi_pitbull.time_explanation() # Prints "Dogs experience 6 years for every 1 human year."
+pipi_pitbull = Dog()
+pipi_pitbull.time_explanation() # Prints "Dogs experience 6 years for every 1 human year."
 ```
 
 - Methods can take on additional arguments aside from self.
@@ -928,7 +928,7 @@ class Dog:
 - These methods are called dunder methods because they are surrounded by double underscores `__init__`
 - These methods have special behavior and behave differently form regular methods.
 
-`__init__`
+`__init__` (Constructor Method)
 
 - used to initialize a newly created object.
 - called every time the class is instantiated.
@@ -944,6 +944,46 @@ class Hello:
 say_hello = Hello() # This will print "Hello" every time the class is instantiated
 
 ```
+
+`__repr__`
+
+- Tells Python what we want the _string representation_ of the class to be.
+- It can only have on parameter of _self_
+
+example for strings:
+
+```python
+class Employee():
+  def __init__(self, name):
+    self.name = name
+
+  def __repr__(self):
+    return self.name
+
+tyler =  Employee("Tyler Durden")
+
+print(tyler) # prints out "Tyler Durden"
+```
+
+example for numbers:
+
+```python
+
+class Number:
+    def __init__(self, number):
+        self.number = number
+
+    def __repr__(self):
+        return repr(self.number)
+
+one = Number(1)
+
+print(one) # 1
+```
+
+'**add**'
+
+- allows you to use the "+" symbol to add two instances of a class together.
 
 ### Instance Variable
 
@@ -983,4 +1023,103 @@ hasattr(attributeless, "fake_attribute")
 
 getattr(attributeless, "other_fake_attribute", 800)
 # returns 800, the default value
+```
+
+### List Object's Attributes
+
+- Use the _dir()_ function to list the attributes of and object.
+
+example:
+
+```python
+dir("this")
+## ['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+```
+
+### Inheritance
+
+- Allows you to reuse parts of another classes definition inside of another class.
+- Everything from the class you are inheriting (Parent Class) will be brought into the new class. Unless you change a value that was passed from the parent class in the new class everything will be the same.
+
+The example below shows a class called "Admin" that is using the _constructor_ from the class "User".
+
+```python
+class User:
+    is_admin = False
+
+    def __init__(self, user_name):
+        self.username = user_name
+
+
+class Admin(User):
+    is_admin = True
+```
+
+### Exceptions
+
+- An _Exception_ is a class that inherits from Python's **Exception** class
+- These can be validated by using the _isssubclass()_ function.
+  - _isssubclass()_ is a Pythhon built-in function that takes two parameters and returns **True** if the first argument is a subclass of the second argument, esle it will return **False**.
+
+```python
+
+def get_food_from_fridge():
+  if refrigerator.cooling == False:
+    raise RefrigeratorException
+  else:
+    return food
+
+def heat_food(food):
+  if microwave.working == False:
+    raise MicrowaveException
+  else:
+    microwave.cook(food)
+    return food
+
+try:
+  food = get_food_from_fridge()
+  food = heat_food(food)
+except KitchenException:
+  food = order_takeout()
+
+```
+
+### Super()
+
+- Allows you to add extra logic to the existing method.
+- **super()** gives us a _proxy method_.
+
+```python
+class Batman:
+    def __init__(self):
+        self.wealth = "Rich"
+        self.armor = "Batsuite"
+        self.lives = "Gotham"
+
+
+class IronMan(Batman):
+    def __init__(self):
+        super().__init__()
+        self.armor = "IronMan Suit"
+        self.lives = "Malibu"
+```
+
+### Interface
+
+- An interface in PYthon usualy refers to the names of the methods and the arguments they take.
+
+### Polymorphism
+
+- _Polymorphism_ is when the same code performs different actions dependingon the data type.
+
+example:
+
+```python
+a_list = [1, 18, 32, 12]
+a_dict = {'value': True}
+a_string = "Polymorphism is cool!"
+
+print(len(a_list)) # 4
+print(len(a_dict)) # 1
+print(len(a_string)) # 21
 ```
