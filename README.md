@@ -860,7 +860,9 @@ pct_women_in_occupation = {"CEO": 28, "Engineering Manager": 9, "Pharmacist": 58
 print(pct_women_in_occupation.items()) # This will return dict_items([('CEO', 28), ('Engineering Manager', 9), ('Pharmacist', 58), ('Physician', 40), ('Lawyer', 37), ('Aerospace Engineer', 9)])
 ```
 
-### Classes
+---
+
+## Classes
 
 - A _Class_ is a template for a data type, that describes the kinds of information that class will hold and how a programmer will interact with that data.
 
@@ -1123,3 +1125,129 @@ print(len(a_list)) # 4
 print(len(a_dict)) # 1
 print(len(a_string)) # 21
 ```
+
+---
+
+## Nodes
+
+- Nodes form the vasis of linked lists, stachs, queues , trees etc...
+- An individual node contains data and links to other nodes
+- Data within a node can be a veriety of types
+- The links or link within the node are referred to as _pointers_
+- If the link or pointer is null this indicates that you have reached the end of THAT node of link path
+- nodes may only be linked to or from a single other node.
+  - if you remove a single linkto a node, that nodes data and any linked nodes could be lost
+  - when this happens to a node, it is considered an _orphaned node_
+
+### Nodes In Python
+
+Below is a class and 3 instances of that class where each instance has it's own value and a link to another instance of that class.
+This example demonstrates how links can be created from one class (Node) to another.
+
+```python
+class Node:
+  def __init__(self, value, link_node=None):
+    self.value = value
+    self.link_node = link_node
+
+  def set_link_node(self, link_node):
+    self.link_node = link_node
+
+  def get_link_node(self):
+    return self.link_node
+
+  def get_value(self):
+    return self.value
+
+# Add your code below:
+yacko = Node("likes to yak")
+wacko = Node("has a penchant for hoarding snacks")
+dot = Node("enjoys spending time in movie lots")
+
+yacko.set_link_node(dot)
+dot.set_link_node(wacko)
+
+dots_data = yacko.get_link_node().get_value()
+wackos_data = dot.get_link_node().get_value()
+
+print(dots_data) # "enjoys spending time in movie lots"
+print(wackos_data) # "has a penchant for hoarding snacks"
+```
+
+---
+
+## Linked Lists
+
+- Are comprised of nodes
+- The nodes contain a link to the next node (and also the previous node for bidirectional linked lists)
+- Can be unidirectional or bidirectional
+- Are a basic data structure, and form the basis for many other data structures
+- Have a single head node, shich serves as the first node in the list
+- Require some maintenance in order to add or remove nodes
+- Are not required to be stored in sequential order in memory
+
+example:
+
+```python
+class Node:
+  def __init__(self, value, next_node=None):
+    self.value = value
+    self.next_node = next_node
+
+  def get_value(self):
+    return self.value
+
+  def get_next_node(self):
+    return self.next_node
+
+  def set_next_node(self, next_node):
+    self.next_node = next_node
+
+class LinkedList:
+  def __init__(self, value=None):
+    self.head_node = Node(value)
+
+  def get_head_node(self):
+    return self.head_node
+
+  def insert_beginning(self, new_value):
+    new_node = Node(new_value)
+    new_node.set_next_node(self.head_node)
+    self.head_node = new_node
+
+  def stringify_list(self):
+    string_list = ""
+    current_node = self.get_head_node()
+    while current_node:
+      if current_node.get_value() != None:
+        string_list += str(current_node.get_value()) + "\n"
+      current_node = current_node.get_next_node()
+    return string_list
+
+  def remove_node(self, value_to_remove):
+    current_node = self.get_head_node()
+    if current_node.get_value() == value_to_remove:
+      self.head_node = current_node.get_next_node()
+    else:
+      while current_node:
+        next_node = current_node.get_next_node()
+        if next_node.get_value() == value_to_remove:
+          current_node.set_next_node(next_node.get_next_node())
+          current_node = None
+        else:
+          current_node = next_node
+```
+
+---
+
+## Stacks
+
+- A stack is a data structure which contains and ordered set of data
+- There are 3 methods for interacting with data in a stack (Push, Pop, and Peek):
+
+  - Push - adds data to the "top" of the stack
+  - Pop - returns and removes data from the "top" of the stack
+  - Peek - returns data from the "top" of the stack but does not remove it
+
+- Stacks mimic a physical "stack" of objects.
+- The method in which items are placed and removed from a stack is called "Last In First Out" or LIFO.
