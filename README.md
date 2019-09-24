@@ -476,6 +476,15 @@ while index < len(foo):
   index += 1
 ```
 
+- You can also run an infinite loop using a _while True_ loop
+
+```python
+
+while True:
+  print("To Infinity and Beyond!")
+
+```
+
 ### _List Comprehension_
 
 - Short hand for running a conditional in a for loop against a list
@@ -1251,3 +1260,48 @@ class LinkedList:
 
 - Stacks mimic a physical "stack" of objects.
 - The method in which items are placed and removed from a stack is called "Last In First Out" or LIFO.
+- Stack have a defined size.
+- A _Stack Overflow_ occurs when data is pushed onto an already full stack.
+
+example:
+
+```python
+ifrom node import Node
+
+class Stack:
+  def __init__(self, limit=1000):
+    self.top_item = None
+    self.size = 0
+    self.limit = limit
+
+  def push(self, value):
+    if self.has_space():
+      item = Node(value)
+      item.set_next_node(self.top_item)
+      self.top_item = item
+      self.size += 1
+      print("Adding {} to the pizza stack!".format(value))
+    else:
+      print("No room for {}!".format(value))
+
+  def pop(self):
+    if not self.is_empty():
+      item_to_remove = self.top_item
+      self.top_item = item_to_remove.get_next_node()
+      self.size -= 1
+      print("Delivering " + item_to_remove.get_value())
+      return item_to_remove.get_value()
+    print("All out of pizza.")
+
+  def peek(self):
+    if not self.is_empty():
+      return self.top_item.get_value()
+    print("Nothing to see here!")
+
+  def has_space(self):
+    return self.limit > self.size
+
+  def is_empty(self):
+    return self.size == 0
+
+```
