@@ -28,6 +28,18 @@ print("Hello World!")
 
 ---
 
+## Relational Operators
+
+```python
+== # value equality / equivalence
+!= # value inequality / inequivalence
+< # less-than
+> # greater-than
+<= # less-than or equal to
+>= # greater-than or equal to
+```
+---
+
 ## Variables
 
 Assign a variable by stating the name of the variable then an equals "=" symbol and the value.
